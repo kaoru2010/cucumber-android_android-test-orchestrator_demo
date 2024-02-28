@@ -30,6 +30,14 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField(
+                "String",
+                "CUCUMBER_JSON_PLUGIN",
+                "\"json:/data/data/com.example.myapplication/files/cucumber.json\""
+            )
+        }
+
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -47,6 +55,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
